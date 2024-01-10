@@ -1,4 +1,6 @@
 # Mario-in-Podman: Ansible Playbooks for Managing the Mario Brothers Container
+![Uploading Screenshot 2024-01-10 at 10.57.30.png…]()
+
 
 This repository provides Ansible playbooks for managing the deployment of the Mario Brothers game container using Podman.
 
