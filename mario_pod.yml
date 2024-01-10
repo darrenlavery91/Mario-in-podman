@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  collections:
+    - containers.podman
+  tasks:
+    - name: Entering mario land
+      containers.podman.podman_container:
+        name: mario_game
+        image: "docker.io/kaminskypavel/mario:latest"
+        state: started
+        ports: 4545:8080
+      register: mario
+
+    - debug:
+        msg: "Go down the tube here: http://127.0.0.1:4545"
+      when: mario.container.State.ExitCode == 0
+    
+    - debug:
+        msg: "Tube is blocked"
+      when: mario.container.State.ExitCode == 1

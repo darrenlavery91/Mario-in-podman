@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  collections:
+    - containers.podman
+  tasks:
+    - name: Exiting mario land
+      containers.podman.podman_container:
+        name: mario_game
+        image: "docker.io/kaminskypavel/mario:latest"
+        state: absent
